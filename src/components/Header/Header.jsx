@@ -1,7 +1,10 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useDarkMode } from "../../context/DarkModeContext";
 
 export default function Header({ filters, filter, onFilterChange }) {
+  const { darkMode, toggleDarkMode } = useDarkMode();
+
   return (
     <header className={styles.header}>
       <ul className={styles.filters}>
