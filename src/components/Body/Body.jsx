@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TodoAdd from "../TodoAdd/TodoAdd";
 import TodoList from "../TodoList/TodoList";
+import styles from "./Body.module.css";
 
 export default function Body({ filter }) {
   const [todos, setTodos] = useState(readTodos);
@@ -22,7 +23,7 @@ export default function Body({ filter }) {
   const filtered = getFiltered(todos, filter);
 
   return (
-    <section>
+    <section className={styles.container}>
       <TodoList
         todos={filtered}
         onDelete={handleDelete}
