@@ -9,13 +9,16 @@ export default function Body() {
     setTodos([...todos, todo]);
   };
 
+  const handleDelete = deleted =>
+    setTodos(todos.filter(el => el.id !== deleted.id));
+
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
   return (
     <section>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={handleDelete} />
       <TodoAdd onAdd={handleAdd} />
     </section>
   );
