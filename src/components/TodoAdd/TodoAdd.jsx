@@ -6,7 +6,11 @@ export default function TodoAdd({ onAdd }) {
   const handleChange = e => setText(e.target.value);
   const handleSubmit = e => {
     e.preventDefault();
-    onAdd({ id: uuidv4(), desc: text, status: "active" });
+    const trimmed = text.trim();
+
+    if (trimmed.length === 0) return;
+
+    onAdd({ id: uuidv4(), desc: trimmed, status: "active" });
   };
 
   return (
