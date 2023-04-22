@@ -6,7 +6,8 @@ export const DarkModeProvider = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
-    setDarkMode(prev => !prev);
+    setDarkMode(!darkMode);
+    updateDarkMode(!darkMode);
   };
 
   return (
@@ -17,3 +18,11 @@ export const DarkModeProvider = ({ children }) => {
 };
 
 export const useDarkMode = () => useContext(DarkModeContext);
+
+const updateDarkMode = darkMode => {
+  if (darkMode) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+};
