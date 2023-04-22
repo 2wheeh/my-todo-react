@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 
 export default function Header({ filters, filter, onFilterChange }) {
   return (
-    <heade className={styles.header}>
+    <header className={styles.header}>
       <ul className={styles.filters}>
         {filters.map((value, index) => (
           <li key={index} className={styles.filter}>
@@ -11,6 +11,6 @@ export default function Header({ filters, filter, onFilterChange }) {
           </li>
         ))}
       </ul>
-    </heade>
+    </header>
   );
 }
