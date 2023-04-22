@@ -1,15 +1,16 @@
 import React from "react";
+import styles from "./header.module.css";
 
 export default function Header({ filters, filter, onFilterChange }) {
   return (
-    <header>
-      <ul>
+    <heade className={styles.header}>
+      <ul className={styles.filters}>
         {filters.map((value, index) => (
-          <li key={index}>
+          <li key={index} className={styles.filter}>
             <button onClick={() => onFilterChange(value)}>{value}</button>
           </li>
         ))}
       </ul>
-    </header>
+    </heade>
   );
 }
