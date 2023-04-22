@@ -5,11 +5,15 @@ import TodoList from "../TodoList/TodoList";
 export default function Body() {
   const [todos, setTodos] = useState(dummy);
 
+  const handleAdd = todo => {
+    setTodos([...todos, todo]);
+  };
+
   return (
-    <div>
+    <section>
       <TodoList todos={todos} />
-      <TodoAdd />
-    </div>
+      <TodoAdd onAdd={handleAdd} />
+    </section>
   );
 }
 
