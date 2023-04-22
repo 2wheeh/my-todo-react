@@ -23,11 +23,11 @@ body {
   align-items: center;
 
   /* by https://cssgradient.io  */
-  background: rgb(99, 125, 133);
+  background: rgb(171, 149, 191);
   background: linear-gradient(
     162deg,
-    rgba(99, 125, 133, 1) 23%,
-    rgba(32, 80, 94, 0.6516981792717087) 90%
+    rgba(171, 149, 191, 0.8477766106442577) 12%,
+    rgba(18, 29, 43, 0.2231267507002801) 90%
   );
 
   font-size: 1.2rem;
