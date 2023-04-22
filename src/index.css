@@ -19,6 +19,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  /* using https://cssgradient.io  */
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    162deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 45, 121, 0.6516981792717087) 100%
+  );
 }
 
 code {
