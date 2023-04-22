@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default function TodoAdd({ onAdd }) {
   const [text, setText] = useState("");
   const handleChange = e => setText(e.target.value);
   const handleSubmit = e => {
     e.preventDefault();
-    onAdd({ id: "unique", desc: text, status: "active" });
+    onAdd({ id: uuidv4(), desc: text, status: "active" });
   };
 
   return (
