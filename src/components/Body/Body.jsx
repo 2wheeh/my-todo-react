@@ -27,12 +27,6 @@ export default function Body() {
   );
 }
 
-// const dummy = [
-//   { id: "1", desc: "잠자기", status: "active" },
-//   { id: "2", desc: "숨쉬기", status: "active" },
-//   { id: "3", desc: "눈뜨기", status: "completed" },
-// ];
-
 /* read todos from localStorage.
  * If there is not todos, it returns an empty array */
 const readTodos = () => {
