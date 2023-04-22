@@ -20,12 +20,12 @@ body {
   justify-content: center;
   align-items: center;
 
-  /* using https://cssgradient.io  */
-  background: rgb(34, 193, 195);
+  /* by https://cssgradient.io  */
+  background: rgb(99, 125, 133);
   background: linear-gradient(
     162deg,
-    rgba(34, 193, 195, 1) 0%,
-    rgba(253, 45, 121, 0.6516981792717087) 100%
+    rgba(99, 125, 133, 1) 23%,
+    rgba(32, 80, 94, 0.6516981792717087) 90%
   );
 }
 
