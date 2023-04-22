@@ -12,6 +12,7 @@ export default function TodoAdd({ onAdd }) {
     if (trimmed.length === 0) return;
 
     onAdd({ id: uuidv4(), desc: trimmed, status: "active" });
+    setText("");
   };
 
   return (
