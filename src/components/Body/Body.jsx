@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TodoAdd from "../TodoAdd/TodoAdd";
 import TodoList from "../TodoList/TodoList";
 
-export default function Body() {
+export default function Body({ filter }) {
   const [todos, setTodos] = useState(readTodos);
 
   const handleAdd = todo => {
@@ -19,9 +19,15 @@ export default function Body() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const filtered = getFiltered(todos, filter);
+
   return (
     <section>
-      <TodoList todos={todos} onDelete={handleDelete} onUpdate={handleUpdate} />
+      <TodoList
+        todos={filtered}
+        onDelete={handleDelete}
+        onUpdate={handleUpdate}
+      />
       <TodoAdd onAdd={handleAdd} />
     </section>
   );
@@ -32,4 +38,11 @@ export default function Body() {
 const readTodos = () => {
   const todos = localStorage.getItem("todos");
   return todos ? JSON.parse(todos) : [];
+};
+
+/* return filtered todos */
+const getFiltered = (todos, filter) => {
+  if (filter === "all") return todos;
+
+  return todos.filter(todo => todo.status === filter);
 };
