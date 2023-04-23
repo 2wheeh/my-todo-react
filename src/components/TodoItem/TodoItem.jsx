@@ -21,9 +21,15 @@ export default function TodoItem({ todo, onDelete, onUpdate }) {
         checked={status === "completed"}
         onChange={handleChange}
       />
-      <label className={styles.desc} htmlFor={id}>
-        {desc}
-      </label>
+      {status === "active" ? (
+        <label className={styles.desc} htmlFor={id}>
+          {desc}
+        </label>
+      ) : (
+        <label className={styles.completed_desc} htmlFor={id}>
+          {desc}
+        </label>
+      )}
       <span className={styles.icon}>
         <button className={styles.button} onClick={handleDelete}>
           <FaTrashAlt />
